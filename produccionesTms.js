@@ -6,13 +6,11 @@ function Servicio (codigo,nombre,precio){
     this.precio= precio;
 };
 
-let servicio1= new Servicio (1,"Fotografia", 800);
+let servicio1= new Servicio (1, "Fotografia", 800);
 let servicio2= new Servicio (2, "Video", 1200);
 let servicio3= new Servicio (3,"drone",3000);
 
 let servicios = [servicio1,servicio2,servicio3]; //array
-
-console.log(servicios);
 
 //CALCULAR COSTO DE SERVICIOS SELECCIONADOS
 
@@ -39,7 +37,7 @@ function calcularPresupuesto() {
     let precioProducto = getPrecioProducto(productoDeseado);
     let cantidadHoras = parseInt(prompt("Ingrese cantidad de horas para el servicio elegido"));
     let subtotal = calcularSubtotal(precioProducto, cantidadHoras);
-    return subtotal;
+    return subtotal; 
 }
 
 
@@ -71,12 +69,11 @@ alert("el presupuesto total es: " + total);
 
 let cuotas = parseInt(prompt("¿En cuantas cuotas queres pagar: 1,3,6,o 12?"))
 if(cuotas===1||cuotas===3||cuotas===6||cuotas||12){
-    let precioCuotas = total / cuotas
-    alert("Serian " + cuotas + "cuotas de " + precioCuotas)
+    let precioCuotas = Math.round(total / cuotas);
+    alert("Serian " + cuotas + " cuotas de " + precioCuotas)
 } else {
         alert ("Solo tenemos 1,3,6 y 12 cuotas")
 }
-    
 
 
 
